@@ -1,0 +1,67 @@
+﻿
+@model List<ElectoralSystem.Models.Voter>
+
+
+@{
+    ViewBag.Title = "VotingNA";
+}
+
+<h2>VotingNA</h2>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@*<link href="~/Content/voter.css" rel="stylesheet" /> *@
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<h1>Candidate Details</h1>
+<h2>National Assembly Voting Page</h2>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var result = confirm("Want to delete?");
+        if (result) {
+            //Logic to delete the item
+
+        }
+    }
+</script>
+
+<form action="" id="NA">
+
+    <div class="table-responsive-lg">
+        <table style="width=100%" class="table">
+            <tr>
+                <th>Candidate No</th>
+                <th>Candidate Name</th>
+                <th>Party Name &nbsp;&nbsp;</th>
+                <th>Voting Symbol &nbsp;&nbsp;</th>
+                <th>Assembly </th>
+                <th>Vote</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <td>@item.nNo</td>
+                <td> @item.nName</td>
+                <td> @item.npartyName</td>
+                <td> <img src="@item.nsymbolPath" alt="Some Picture" height="75" width="80"></td>
+                <td>NA  :  &nbsp; @item.NA </td>
+                <td><input type="radio" name="navote" value="@item.nNo" /></td>
+                <tr></tr>
+
+            }
+
+        </table>
+    </div>
+
+</form>
+<button type="submit" form="NA" onclick="return confirm('Are you sure you want to vote this Person?');"> Vote </button>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+﻿@using ElectoralSystem.Models
+<html>
+<head>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/candidate.css" rel="stylesheet" />
+   
+    <title>Candidate 1/5</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form>
+
+        <h1>Welcome @TempData["Name2"]</h1>
+        
+        <br>
+        <br>
+
+
+        <input class="btn btn-outline-success btn-lg btn-block" type="submit" formaction="cResults" value="Your Constituency Results" />
+        <br>
+        <br>
+
+        <input class="btn btn-outline-success btn-lg btn-block" type="submit" formaction="withdrawalRequest" value="Constituency Withdrawal Request" />
+        <br>
+        <br>
+        <input class="btn btn-outline-success btn-lg btn-block" type="submit" formaction="complaint" value="Complaint to ECP" />
+        <br>
+        <br>
+        <input class="btn btn-outline-success btn-lg btn-block" type="submit" formaction="partyStandings" value="View Party Standings" />
+    </form>
+
+</body>
+</html>

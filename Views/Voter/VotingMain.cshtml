@@ -1,0 +1,110 @@
+﻿@model IEnumerable<ElectoralSystem.Models.Voter>
+
+
+@{
+    <title>Voting Page</title>
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@*<link href="~/Content/voter.css" rel="stylesheet" /> *@
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<h1>Candidate Details</h1>
+<h2>Provincial Voting Page</h2>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var result = confirm("Want to delete?");
+        if (result) {
+            //Logic to delete the item
+
+        }
+    }
+</script>
+
+ <form action="votingNA" id="PA">
+
+    <div class="table-responsive-lg">
+        <table style="width:100%" class="table">
+            <tr>
+                <th>Candidate No</th>
+                <th>Candidate Name</th>
+                <th>Party Name &nbsp;&nbsp;</th>
+                <th>Voting Symbol &nbsp;&nbsp;</th>
+                <th>Assembly </th>
+                <th>Vote</th>
+            </tr>
+            @foreach (var item in Model)
+            {   
+                <td>@item.cNo</td>
+                <td> @item.cName</td>
+                <td> @item.partyName</td>
+                <td> <img src="@item.symbolPath" alt="Some Picture" height="75" width="80"></td>
+                <td>@item.cAssemblyAlias &nbsp; @item.cProvincialNo </td>
+                <td><input type="radio" name="choice" value="@item.cNo" /></td>
+                <tr></tr>
+               
+
+            }
+            
+        </table>
+    </div>
+     
+</form>
+
+<button type="submit" form="PA" onclick="return confirm('Are you sure you want to vote this Person?');"> Vote </button>
+
+
+
+
+    @{
+        if (Model == null)
+        {
+            <h1> You are not registered to vote! Please Contact ECP</h1>
+        }
+        else
+        {
+            @*
+                <h1>NIC : @Model.NIC</h1>
+                <h1>Name : @Model.Name</h1>
+
+                <h1>
+                    Voter Block Code : @Model.areaCode <br />
+                    Area: @Model.Area <br />
+                    City : @Model.City <br />
+                    NA # @Model.naNo <br />
+                    Provincial :  @Model.assemblyAlias &nbsp; @Model.areaCode
+
+                </h1>
+            *@
+            @*
+            <h3 style="font-size:large; color:green; margin-left: 500px"> // Candidates, Party and Voting information here </h3>
+            <h3 style="font-size:large; color:green; margin-left: 500px"> Select your Candidate whom you want to cast your vote </h3>
+
+            <div class="custom-control custom-radio">
+                <label class="btn btn-outline-warning">
+                    <input type="radio" name="NA" value="option 1" autocomplete="off" /> Option 1
+
+                </label>
+
+                <label class="btn btn-outline-warning">
+                    <input type="radio" name="NA" value="option 2" autocomplete="off" /> Option 2
+                </label>
+
+                <label class="btn btn-outline-warning">
+                    <input type="radio" name="NA" value="option 3" /> Option 3
+                </label>
+
+                <label class="btn btn-outline-warning">
+                    <input type="radio" name="NA" id="option 4"> Option 4
+                </label>
+
+
+            </div>
+                *@
+
+        }
+    }
+
